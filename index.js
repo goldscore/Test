@@ -22,23 +22,35 @@ const PORT = process.env.PORT || 8080;
 const cache = new Map();
 const CACHE_TTL = 30 * 24 * 60 * 60 * 1000; // Cache for 30 Days
 
+import express from "express";
 import basicAuth from "express-basic-auth";
 import config from "./config.js";
 import chalk from "chalk";
 
+const app = express();
+
 if (config.challenge !== false) {
   console.log(chalk.green("🔒 Password protection is enabled! Listing logins below"));
-  
+
   Object.entries(config.users).forEach(([username, password]) => {
     console.log(chalk.blue(`Username: ${username}, Password: ${password}`));
   });
 
-  // Force re-prompt EVERY request
+  // Force password prompt EVERY single time
   app.use((req, res, next) => {
-    res.set("Cache-Control", "no-store"); // prevent browser from caching login
-    return basicAuth({ users: config.users, challenge: true })(req, res, next);
+    res.set("Cache-Control", "no-store"); // Prevent browser caching
+    basicAuth({ users: config.users, challenge: true })(req, res, next);
   });
 }
+
+app.get("/", (req, res) => {
+  res.send("Protected page");
+});
+
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
+
 
 app.get("/e/*", async (req, res, next) => {
   try {
