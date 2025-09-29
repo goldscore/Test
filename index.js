@@ -22,11 +22,6 @@ const PORT = process.env.PORT || 8080;
 const cache = new Map();
 const CACHE_TTL = 30 * 24 * 60 * 60 * 1000; // Cache for 30 Days
 
-import express from "express";
-import basicAuth from "express-basic-auth";
-import config from "./config.js";
-import chalk from "chalk";
-
 const app = express();
 
 if (config.challenge !== false) {
