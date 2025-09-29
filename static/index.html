@@ -20,23 +20,26 @@
   <div id="particles-js">
     <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0"></script>
 
-    <!-- Outer container: centers the block vertically -->
-    <div style="display:flex; justify-content:center; align-items:center; height:100vh; width:100%;">
-      <!-- Inner block: evenly spaces GoldNode and Made by Golden -->
-      <div
-        style="display:flex; flex-direction:column; justify-content:space-between; align-items:center; text-align:center; gap:1em;">
-        <h1 class="title" style="font-size:7.5rem; color:#FFD700; margin:0;">GoldNode</h1>
-        <h1 class="title" style="font-size:2.5rem; color:#FFD700; margin:0;">Made by Golden</h1>
+    <!-- Outer container: centers everything vertically -->
+    <div
+      style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; width:100%; gap:1.5em;">
+
+      <!-- Title: slightly moved down relative to the flex container -->
+      <h1 class="title" style="font-size:7.5rem; color:#FFD700; margin:0; transform: translateY(0.2em);">
+        GoldNode
+      </h1>
+
+      <!-- Subtitle -->
+      <h1 class="title" style="font-size:2.5rem; color:#FFD700; margin:0;">Made by Golden</h1>
+
+      <!-- Search bar -->
+      <div class="search-container" style="width:100%; max-width:500px;">
+        <form id="fv" method="POST" style="width:100%;">
+          <input id="iv" class="search-home" placeholder="Search or enter a URL" type="text" style="width:100%;" />
+        </form>
       </div>
-    </div>
 
-    <!-- Search bar -->
-    <div class="search-container" style="width:100%; max-width:500px; margin-top:2em;">
-      <form id="fv" method="POST" style="width:100%;">
-        <input id="iv" class="search-home" placeholder="Search or enter a URL" type="text" style="width:100%;" />
-      </form>
     </div>
-
   </div>
 
   <!-- JS scripts -->
