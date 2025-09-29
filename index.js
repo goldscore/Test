@@ -22,13 +22,22 @@ const PORT = process.env.PORT || 8080;
 const cache = new Map();
 const CACHE_TTL = 30 * 24 * 60 * 60 * 1000; // Cache for 30 Days
 
+import basicAuth from "express-basic-auth";
+import config from "./config.js";
+import chalk from "chalk";
+
 if (config.challenge !== false) {
   console.log(chalk.green("🔒 Password protection is enabled! Listing logins below"));
-  // biome-ignore lint/complexity/noForEach:
+  
   Object.entries(config.users).forEach(([username, password]) => {
     console.log(chalk.blue(`Username: ${username}, Password: ${password}`));
   });
-  app.use(basicAuth({ users: config.users, challenge: true }));
+
+  // Force re-prompt EVERY request
+  app.use((req, res, next) => {
+    res.set("Cache-Control", "no-store"); // prevent browser from caching login
+    return basicAuth({ users: config.users, challenge: true })(req, res, next);
+  });
 }
 
 app.get("/e/*", async (req, res, next) => {
