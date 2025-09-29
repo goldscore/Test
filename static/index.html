@@ -7,66 +7,25 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" id="tab-favicon" href="favicon.png" />
-  <title>GoldNode</title> <!-- Tab title -->
+  <title>GoldNode</title>
   <link rel="stylesheet" href="/assets/css/global.css?v=6" />
   <link rel="stylesheet" href="/assets/css/h.css?v=01" />
   <link rel="stylesheet" href="/assets/css/nav.css?v=01" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    /* Only affects main content */
-    .centered-main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      /* vertical centering */
-      align-items: center;
-      /* horizontal centering */
-      min-height: 100vh;
-      /* full screen height */
-      text-align: center;
-    }
-
-    .centered-main .title {
-      margin: 0.2em 0;
-    }
-
-    .centered-main .subtitle {
-      font-size: 2.5rem;
-      color: #FFD700;
-      margin-top: 0;
-    }
-
-    .centered-main .search-container {
-      margin-top: 2em;
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .centered-main .search-home {
-      width: 100%;
-    }
-  </style>
 </head>
 
-<body onload="SplashT">
+<body class="center" onload="SplashT">
   <div class="f-nav"></div>
 
   <div id="particles-js">
     <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0"></script>
 
-    <!-- Main container centered -->
-    <div class="centered-main">
-      <!-- GoldNode Title -->
+    <!-- Main content -->
+    <div class="main">
       <h1 class="title">&#71;&#111;&#108;&#100;&#78;&#111;&#100;&#101;</h1>
-
-      <!-- Made by Golden -->
-      <h1 class="subtitle">Made by Golden</h1>
-
-      <!-- Splash text -->
+      <h1 class="title" style="font-size:2.5rem; color:#FFD700; margin:0;">Made by Golden</h1>
       <p id="splash"></p>
 
-      <!-- Search bar -->
       <div class="search-container">
         <form id="fv" method="POST">
           <input id="iv" class="search-home" placeholder="Search or enter a URL" type="text" />
@@ -82,7 +41,7 @@
   <script src="./assets/mathematics/config.js?v=2025-04-15"></script>
   <script src="/assets/js/m1.js"></script>
 
-  <!-- Vercel / Google Analytics preserved -->
+  <!-- Analytics / tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
