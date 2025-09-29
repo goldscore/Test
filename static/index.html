@@ -12,30 +12,64 @@
   <link rel="stylesheet" href="/assets/css/h.css?v=01" />
   <link rel="stylesheet" href="/assets/css/nav.css?v=01" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Only affects main content */
+    .centered-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* vertical centering */
+      align-items: center;
+      /* horizontal centering */
+      min-height: 100vh;
+      /* full screen height */
+      text-align: center;
+    }
+
+    .centered-main .title {
+      margin: 0.2em 0;
+    }
+
+    .centered-main .subtitle {
+      font-size: 2.5rem;
+      color: #FFD700;
+      margin-top: 0;
+    }
+
+    .centered-main .search-container {
+      margin-top: 2em;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .centered-main .search-home {
+      width: 100%;
+    }
+  </style>
 </head>
 
-<body class="center" onload="SplashT">
+<body onload="SplashT">
   <div class="f-nav"></div>
 
   <div id="particles-js">
-    <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/"></script>
+    <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0"></script>
 
-    <!-- Main container vertically centered -->
-    <div class="main"
-      style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
+    <!-- Main container centered -->
+    <div class="centered-main">
       <!-- GoldNode Title -->
-      <h1 class="title" style="margin-bottom: 0.2em;">&#71;&#111;&#108;&#100;&#78;&#111;&#100;&#101;</h1>
+      <h1 class="title">&#71;&#111;&#108;&#100;&#78;&#111;&#100;&#101;</h1>
 
       <!-- Made by Golden -->
-      <h1 class="title" style="font-size: 2.5rem; color: #FFD700; margin-top: 0;">Made by Golden</h1>
+      <h1 class="subtitle">Made by Golden</h1>
 
       <!-- Splash text -->
       <p id="splash"></p>
 
       <!-- Search bar -->
-      <div class="search-container" style="margin-top: 2em; width: 100%; max-width: 500px;">
-        <form id="fv" method="POST" style="width: 100%;">
-          <input id="iv" class="search-home" placeholder="Search or enter a URL" type="text" style="width: 100%;" />
+      <div class="search-container">
+        <form id="fv" method="POST">
+          <input id="iv" class="search-home" placeholder="Search or enter a URL" type="text" />
         </form>
       </div>
     </div>
@@ -52,13 +86,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+    function gtag() { dataLayer.push(arguments); }
     gtag("js", new Date());
     gtag("config", "G-WKJQ5QHQTJ");
   </script>
-
 </body>
 
 </html>
