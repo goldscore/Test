@@ -7,46 +7,54 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" id="tab-favicon" href="favicon.png" />
-  <title id="t">Home</title>
   <link rel="stylesheet" href="/assets/css/global.css?v=6" />
   <link rel="stylesheet" href="/assets/css/h.css?v=01" />
   <link rel="stylesheet" href="/assets/css/nav.css?v=01" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6840529569014734"
-    crossorigin="anonymous"></script>
 </head>
 
 <body class="center" onload="SplashT">
   <div class="f-nav"></div>
+
   <div id="particles-js">
-    <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/"></script>
-    <div class="main">
-      <h1 class="title">&#73;&#110;&#116;&#101;&#114;&#115;&#116;&#101;&#108;&#108;&#97;&#114;</h1>
-      <p id="splash"></p>
-      <div class="search-container">
-        <form id="fv" method="POST">
-          <input id="iv" class="search-home" placeholder="Search or enter a URL" type="text" />
+    <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0"></script>
+
+    <!-- Outer container: centers everything vertically -->
+    <div
+      style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; width:100%; gap:1.2em;">
+
+      <!-- Title: slightly moved down relative to the flex container -->
+      <h1 class="title" style="font-size:7.5rem; color:#FFD700; margin:0 0 -0.2em 0;">
+        GoldNode
+      </h1>
+
+      <!-- Subtitle -->
+      <h1 class="title" style="font-size:2.5rem; color:#FFD700; margin:0;">Made by Golden</h1>
+
+      <!-- Search bar -->
+      <div class="search-container" style="width:100%; max-width:500px;">
+        <form id="fv" method="POST" style="width:100%;">
+          <input id="iv" class="search-home" placeholder="Search or enter a URL" type="text" style="width:100%;" />
         </form>
       </div>
     </div>
   </div>
+
+  <!-- JS scripts -->
   <script src="assets/js/i1.js"></script>
   <script src="/assets/js/h1.js"></script>
   <script src="./assets/mathematics/bundle.js?v=2025-04-15"></script>
   <script src="./assets/mathematics/config.js?v=2025-04-15"></script>
   <script src="/assets/js/m1.js"></script>
-  <!-- DO NOT REMOVE-->
+
+  <!-- Analytics / tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"></script>
   <script>
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      dataLayer.push(arguments)
-    }
-    gtag("js", new Date())
-
-    gtag("config", "G-WKJQ5QHQTJ")
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-WKJQ5QHQTJ");
   </script>
-  <!-- DO NOT REMOVE-->
 </body>
 
 </html>
